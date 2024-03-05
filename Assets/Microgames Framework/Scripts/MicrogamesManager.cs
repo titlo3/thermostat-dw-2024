@@ -275,7 +275,9 @@ public class MicrogamesManager : MonoBehaviour
                 controlsScreen.HideControls();
                 ShowGoalAnimation();
 
-                goalAnnouncement.PlayDelayed(0.2f);
+                if (goalAnnouncement.clip != null)
+                    goalAnnouncement.PlayDelayed(0.2f);
+                
                 yield return new WaitUntil(() => state == GameState.GoalShowing);
 
                 StartCountdownAnimation();
@@ -340,6 +342,10 @@ public class MicrogamesManager : MonoBehaviour
                 yield return new WaitUntil(() => state == GameState.CurtainsClosed);
                 creditsScreen.Clear();
             }
+
+            // If any games are using PlayerPrefs for persisting a high score/etc.
+            // ensure it's not lost if we crash/lose power without a graceful exit.
+            PlayerPrefs.Save();
         }
     }
 
@@ -360,10 +366,9 @@ public class MicrogamesManager : MonoBehaviour
 
         // Check for game objects with components inheriting from MicrogameEvents or MicrogameInputEvents
         MicrogameEvents[] microgameEventsComponents = FindObjectsOfType<MicrogameEvents>(true);
-        MicrogameInputEvents[] microgameInputEventsComponents = FindObjectsOfType<MicrogameInputEvents>(true);
 
         // If no such components are found, load the microMix scene
-        if (microgameEventsComponents.Length > 0 || microgameInputEventsComponents.Length > 0) {
+        if (microgameEventsComponents.Length > 0) { // || microgameInputEventsComponents.Length > 0) {
             SceneManager.LoadScene(FrameworkScenePath);
         } else {
             Debug.Log("Skipped loading microMix because no existing game objects with MicrogameEvents or MicrogameInputEvents components.");
@@ -538,6 +543,7 @@ public class MicrogamesManager : MonoBehaviour
             goalAnnouncement.clip = clip;
         } else {
             Debug.LogWarning($"No voice sample found for game goal/prompt '{prompt}'");
+            goalAnnouncement.clip = null;
         }
     }
 

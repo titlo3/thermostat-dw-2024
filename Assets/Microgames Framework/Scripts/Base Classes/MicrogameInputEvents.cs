@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Use for a Player Controller class that processes control input from one player.
+/// </summary>
 public abstract class MicrogameInputEvents : MicrogameEvents
 {
     public InputSource getInputFrom; // Identifies which player control set is used by this script
@@ -10,17 +13,7 @@ public abstract class MicrogameInputEvents : MicrogameEvents
     private InputAction _rawStick;
     public PlayerID playerID { get; private set; }
 
-    protected Vector2 stick {
-        get {
-            var rawValue = _rawStick.ReadValue<Vector2>();
-            return new Vector2(Digitize(rawValue.x), Digitize(rawValue.y));
-        }
-    }
-
-    float Digitize(float analog) {
-        const float deadzone = 0.1f;
-        return analog < -deadzone ? -1 : analog <= deadzone ? 0 : 1;
-    }
+    protected Vector2 stick => _rawStick.ReadValue<Vector2>();
 
     public void Initialize(InputSource source) {
         getInputFrom = source;
