@@ -13,6 +13,7 @@ public class Thermostat : MicrogameInputEvents
     public SpriteRenderer indicator;
     bool button1Held = false;
     bool button2Held = false;
+    bool windBlowingUp = true;
     [Header("Thermostat Range")]
     public float centerTemp = 20;
     public float tempRange = 30;
@@ -23,6 +24,16 @@ public class Thermostat : MicrogameInputEvents
     public float sloppyness = 0.5f;
     [Range(0.05f, 0.5f)]
     public float acceptRange = 0.2f;
+    [Range(1f, 30f)]
+    public float pushForce = 20f;
+    float windStrength = 0;
+    float windDirectionTimer = 0;
+
+    protected override void OnGameStart()
+    {
+        base.OnGameStart();
+        windStrength = 20f;
+    }
 
     void Start()
     {
@@ -61,6 +72,61 @@ public class Thermostat : MicrogameInputEvents
 
     void FixedUpdate()
     {
+        /* RANDOM MOVEMENT
+         
+        if (windStrength != 0)
+        {
+            windStrength = 3;
+            if (windBlowingUp)
+            {
+                tempVelocity += tempAcceleration / windStrength;
+            }
+            else
+            {
+                tempVelocity -= tempAcceleration / windStrength;
+            }
+
+            windDirectionTimer--;
+            if (windDirectionTimer < 0)
+            {
+                windDirectionTimer = Random.Range(5, 10);
+                windBlowingUp = !windBlowingUp;
+            }
+        }
+
+        */
+
+        /* DAD CHANGES
+        */
+
+        /*
+        */
+
+        /* CONSTANT PUSH
+        */
+
+        if (windStrength != 0)
+        {
+            if (windBlowingUp)
+            {
+                tempVelocity += tempAcceleration / windStrength;
+            }
+            else
+            {
+                tempVelocity -= tempAcceleration / windStrength;
+            }
+
+            windDirectionTimer--;
+            if (windDirectionTimer < 0)
+            {
+                windDirectionTimer = Random.Range(50, 100);
+                windBlowingUp = !windBlowingUp;
+            }
+        }
+
+        /*
+        */
+
         temperature += tempVelocity;
         if (temperature > centerTemp + tempRange) {
             temperature = centerTemp + tempRange;
