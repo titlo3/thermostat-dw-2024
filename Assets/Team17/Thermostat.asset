@@ -19,7 +19,15 @@ MonoBehaviour:
   prompt: 
   singlePlayerScene: {fileID: 0}
   twoPlayerScene: {fileID: 0}
-  controls: []
+  controls:
+  - label: Decrease Temperature
+    primary: 25
+    joiner: 0
+    secondary: 0
+  - label: Increase Temperature
+    primary: 26
+    joiner: 0
+    secondary: 0
   rightPlayerAltControls: []
   singlePlayerScenePath: 
   twoPlayerScenePath: 
