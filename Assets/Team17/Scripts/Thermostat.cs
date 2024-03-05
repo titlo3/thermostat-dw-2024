@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 public class Thermostat : MicrogameInputEvents
 {
@@ -11,6 +11,9 @@ public class Thermostat : MicrogameInputEvents
     public GameObject tempDial;
     public GameObject targetMarker;
     public SpriteRenderer indicator;
+    public TextMeshProUGUI winTimerText;
+    float winTimer = 5;
+    bool win = false;
     bool button1Held = false;
     bool button2Held = false;
     bool windBlowingUp = true;
@@ -22,13 +25,13 @@ public class Thermostat : MicrogameInputEvents
     public float tempAcceleration = 0.01f;
     [Range(0.2f, 4f)]
     public float sloppyness = 0.5f;
-    [Range(0.05f, 0.5f)]
+    [Range(0.05f, 2f)]
     public float acceptRange = 0.2f;
     [Range(1f, 30f)]
     public float pushForce = 20f;
     float windStrength = 0;
     float windDirectionTimer = 0;
-
+    int dadAdjusting = 500;
     protected override void OnGameStart()
     {
         base.OnGameStart();
@@ -38,10 +41,10 @@ public class Thermostat : MicrogameInputEvents
     void Start()
     {
         if (Random.Range(0f, 2f) > 1f) {
-            tempTarget = Random.Range(0f, 5f) + (centerTemp + tempRange) - 5f;
+            tempTarget = Random.Range(0f, 5f) + (centerTemp + tempRange) - 7f;
         }
         else {
-            tempTarget = Random.Range(0f, 5f) - (centerTemp - tempRange);
+            tempTarget = Random.Range(2f, 7f) - (centerTemp - tempRange);
         }
 
         Debug.Log(tempTarget);
@@ -99,11 +102,30 @@ public class Thermostat : MicrogameInputEvents
         /* DAD CHANGES
         */
 
+        windStrength = 4;
+
+        if (windStrength != 0)
+        {
+            if (dadAdjusting < 50) {
+                winTimerText.text = "Dad is adjusting";
+                if(temperature < centerTemp)
+                    tempVelocity += tempAcceleration / windStrength;
+                else
+                    tempVelocity -= tempAcceleration / windStrength;
+            }
+
+            dadAdjusting--;
+            if (dadAdjusting < 0)
+            {
+                dadAdjusting = Random.Range(500, 700);
+            }
+        }
+
         /*
         */
 
         /* CONSTANT PUSH
-        */
+        
 
         if (windStrength != 0)
         {
@@ -124,7 +146,7 @@ public class Thermostat : MicrogameInputEvents
             }
         }
 
-        /*
+        
         */
 
         temperature += tempVelocity;
@@ -139,13 +161,27 @@ public class Thermostat : MicrogameInputEvents
         }
         tempDial.transform.eulerAngles = new Vector3(0, 0, -(((temperature - centerTemp) / tempRange) * 90f));
 
-        if (Mathf.Abs(temperature - tempTarget) < acceptRange)
+        if (!win && Mathf.Abs(temperature - tempTarget) < acceptRange)
         {
             indicator.color = Color.green;
+            winTimer -= Time.deltaTime;
+            winTimerText.text = winTimer.ToString("#.00");
+            if (winTimer <= 0) {
+                win = true;
+            }
         }
-        else { 
+        else if(!win && dadAdjusting > 50) { 
             indicator.color = Color.red;
+            winTimer = 3;
+            winTimerText.text = "";
         }
+
+        if (win) {
+            tempVelocity = 0;
+            windStrength = 0;
+            winTimerText.text = "You Win!";
+        }
+
 
         if (tempVelocity < 0) tempVelocity += (tempAcceleration / sloppyness) * Time.deltaTime;
         else tempVelocity -= (tempAcceleration / sloppyness) * Time.deltaTime;
