@@ -132,8 +132,10 @@ MonoBehaviour:
   getInputFrom: 0
   dadState: 0
   sr: {fileID: 8540364116278371957}
-  spriteIdle: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  spriteAnticipate: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  spriteLook: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  spriteAdjust: {fileID: 21300000, guid: 3d6f35cb802800448ab7c365af3363a8, type: 3}
+  spriteIdle: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
+  spriteAnticipate: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
+  spriteLook: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
+  spriteAdjust: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
   iFrames: 1
+  randomStateSwitch: {x: 2, y: 4}
+  randomIdleSwitch: {x: 1, y: 2.5}
