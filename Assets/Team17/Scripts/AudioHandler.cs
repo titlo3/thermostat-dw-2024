@@ -67,7 +67,7 @@ public class AudioHandler : MonoBehaviour
         {
             if (i == randInt)
             {
-                source_dadSounds.PlayOneShot(couchRuffles[i]);
+                source_sfx.PlayOneShot(couchRuffles[i]);
             }
         }
     }
@@ -79,7 +79,7 @@ public class AudioHandler : MonoBehaviour
         {
             if (i == randInt)
             {
-                source_dadSounds.PlayOneShot(dadFakeOuts[i]);
+                source_dadSounds.PlayOneShot(dadYells[i]);
             }
         }
     }
