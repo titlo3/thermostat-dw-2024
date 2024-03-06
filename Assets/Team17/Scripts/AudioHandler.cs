@@ -19,6 +19,7 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] AudioClip[] dadYells;
     [SerializeField] AudioClip[] buttonClick;
     [SerializeField] AudioClip[] thermostatTick;
+    [Header("Looping Audio")]
 
     //Music stuff
     [Header("Music Control")]
