@@ -40,6 +40,9 @@ public class Thermostat : MicrogameInputEvents
     public float dadStrength = 0;
     float windDirectionTimer = 0;
     int dadAdjusting = -1;
+    public Dad dad;
+
+
     protected override void OnGameStart()
     {
         base.OnGameStart();
@@ -99,7 +102,8 @@ public class Thermostat : MicrogameInputEvents
         {
             if (dadAdjusting > 0) {
                 winTimerText.text = "Dad is adjusting";
-                if(temperature < centerTemp)
+                dad.dadState = (int)Dad.dadStates.ADJUST;
+                if (temperature < centerTemp)
                     tempVelocity += tempAcceleration / dadStrength;
                 else
                     tempVelocity -= tempAcceleration / dadStrength;
@@ -139,6 +143,7 @@ public class Thermostat : MicrogameInputEvents
             }
             if (winTimer <= 0) {
                 win = true;
+                ReportGameCompletedEarly();
             }
         }
         else if(!win && dadAdjusting < 0) {

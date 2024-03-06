@@ -11,7 +11,7 @@ public class Dad : MicrogameInputEvents
         ADJUST
     }
 
-    [SerializeField] int dadState;
+    [SerializeField] public int dadState;
     int previousDadState = -1;
     [SerializeField] SpriteRenderer sr;
     [Header("Sprites:")]
