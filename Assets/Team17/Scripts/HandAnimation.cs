@@ -5,8 +5,6 @@ using UnityEngine;
 public class HandAnimation : MicrogameInputEvents
 {
     [SerializeField] GameObject awayAnchor;
-    [SerializeField] GameObject lowerTempAnchor;
-    [SerializeField] GameObject increaseTempAnchor;
     [SerializeField] Animator buttonPressAnim;
     bool button1Held = false;
     bool button2Held = false;
@@ -16,8 +14,7 @@ public class HandAnimation : MicrogameInputEvents
     {
         if (button1.IsPressed() && !button1Held)
         {
-            transform.position = lowerTempAnchor.transform.position;
-            buttonPressAnim.Play("Hand_ButtonPress");
+            buttonPressAnim.Play("Hand_LowButtonPress");
             button1Held = true;
         }
         else
@@ -29,13 +26,11 @@ public class HandAnimation : MicrogameInputEvents
 
         if (button2.IsPressed() && !button2Held)
         {
-            transform.position = lowerTempAnchor.transform.position;
-            buttonPressAnim.Play("Hand_ButtonPress");
+            buttonPressAnim.Play("Hand_IncButtonPress");
             button2Held = true;
         }
         else
         {
-            transform.position = awayAnchor.transform.position;
             buttonPressAnim.StopPlayback();
             button2Held = false;
         }
