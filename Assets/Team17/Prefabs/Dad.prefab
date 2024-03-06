@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getInputFrom: 0
   dadState: 0
-  sr: {fileID: 0}
+  sr: {fileID: 5915994398507043992}
   spriteIdle: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
   spriteAnticipate: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
   spriteLook: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
