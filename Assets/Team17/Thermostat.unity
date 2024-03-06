@@ -787,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: dadFakeOuts.Array.size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: dadYells.Array.data[0]
@@ -865,6 +865,26 @@ PrefabInstance:
       propertyPath: dadFakeOuts.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 9eef0d22a93f672478f9e8ddb480623d, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 23f8b9cc4bce12945b6b6acc805faea4, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a33fdf42b835a74cb874f84b0c36114, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 00a3545eeab6064428c4eea368af4a8f, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04d0c3c2366a0684f898e896885f6e4c, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ea5594f2f7642c40b42ebe4d8abceb4, type: 3}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: couchRuffles.Array.data[0]
       value: 
