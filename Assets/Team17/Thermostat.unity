@@ -1165,6 +1165,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9be54a33b2a0a7347bac899dbc1b65f3, type: 2}
+    - target: {fileID: 2598768604002990191, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3163879157538357184, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: m_Name
       value: Thermostat
@@ -1173,6 +1177,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9be54a33b2a0a7347bac899dbc1b65f3, type: 2}
+    - target: {fileID: 6635374807194727576, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
+      propertyPath: acceptRange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: winTimerText
       value: 
