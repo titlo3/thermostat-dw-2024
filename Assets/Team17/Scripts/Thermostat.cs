@@ -49,6 +49,11 @@ public class Thermostat : MicrogameInputEvents
         return (temperature + tempRange - centerTemp) / 2*tempRange ;
     }
 
+    public float getTargetHeat()
+    {
+        return (tempTarget + tempRange - centerTemp) / 2 * tempRange;
+    }
+
     void Start()
     {
         if (Random.Range(0f, 2f) > 1f) {
