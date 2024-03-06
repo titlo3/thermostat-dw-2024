@@ -138,7 +138,7 @@ public class Thermostat : MicrogameInputEvents
             winTimer -= Time.deltaTime;
             winTimerText.text = winTimer.ToString("#.00");
             if (!dadAdjusted && winTimer <= 2) {
-                dadAdjusting = 75;
+                dadAdjusting = 45;
                 dadAdjusted = true;
             }
             if (winTimer <= 0) {

@@ -269,10 +269,11 @@ MonoBehaviour:
   centerTemp: 0
   tempRange: 30
   tempAcceleration: 0.0081
+  jumpScale: 5
   sloppyness: 4
   acceptRange: 0.31
   timeToWin: 3
-  dadStrength: 1
+  dadStrength: 4
 --- !u!1 &7111016866744355962
 GameObject:
   m_ObjectHideFlags: 0
