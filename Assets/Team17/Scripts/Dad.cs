@@ -23,6 +23,12 @@ public class Dad : MicrogameInputEvents
     [Header("Tuners:")]
     [SerializeField][Range(0f, 2f)][Tooltip("Determines how much invincibility time player has after dad turns around")] float iFrames;
     float iFrameCurrent;
+    [SerializeField][Tooltip("Random Range in seconds for how long it takes before dad does a fakeout/look")] Vector2 randomStateSwitch;
+    float timeTillNextSwitch;
+    float timeTillNextSwitchCurrent;
+    [SerializeField][Tooltip("Random Range in seconds before dad switches back to idle")] Vector2 randomIdleSwitch;
+    float timeToSwitchToIdle;
+    float timeToSwitchToIdleCurrent;
 
     // Start is called before the first frame update
     void Start()
@@ -41,21 +47,37 @@ public class Dad : MicrogameInputEvents
             {
                 case dadStates.IDLE:
                     sr.sprite = spriteIdle;
+                    sr.color = Color.green; //TEMPORARY
+                    AudioHandler._instance.ReturnMusic();
                     AudioHandler._instance.PlayCouchRuffle();
+                    timeTillNextSwitch = Random.Range(randomStateSwitch.x, randomStateSwitch.y); //Time until next random state switch
+                    timeTillNextSwitchCurrent = 0;
                     break;
                 case dadStates.ANTICIPATE:
                     sr.sprite = spriteAnticipate;
+                    sr.color = Color.yellow; //TEMPORARY
                     AudioHandler._instance.PlayCouchRuffle();
                     AudioHandler._instance.PlayFakeOut();
+                    timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
+                    timeToSwitchToIdleCurrent = 0;
+                    iFrameCurrent = 0;
                     break;
                 case dadStates.LOOK:
                     sr.sprite = spriteLook;
+                    sr.color = Color.red; //TEMPORARY
                     AudioHandler._instance.PlayCouchRuffle();
                     AudioHandler._instance.PlayFakeOut();
+                    AudioHandler._instance.CutMusic();
+                    timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
+                    timeToSwitchToIdleCurrent = 0;
+                    iFrameCurrent = 0;
                     break;
                 case dadStates.ADJUST:
                     sr.sprite = spriteAdjust;
+                    sr.color = Color.blue; //TEMPORARY
                     AudioHandler._instance.PlayCouchRuffle();
+                    timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
+                    timeToSwitchToIdleCurrent = 0;
                     break;
             }
             // Update the previous state to the current state
@@ -81,17 +103,54 @@ public class Dad : MicrogameInputEvents
 
     }
 
-
+    //Method that randomly switches to idle after random amount of time
+    void SwitchToIdle()
+    {
+        //After time, switch back to idle
+        if (timeToSwitchToIdleCurrent < timeToSwitchToIdle)
+        {
+            timeToSwitchToIdleCurrent += Time.deltaTime;
+            Debug.Log("WAITING TO SWITCH TO IDLE");
+        }
+        else if (timeToSwitchToIdleCurrent >= timeToSwitchToIdle)
+        {
+            int idleState = (int)dadStates.IDLE; //Randomly select a new state
+            dadState = idleState;
+            Debug.Log("SWITCHING TO IDLE");
+        }
+    }
 
     //UPDATE METHODS. EACH OF THESE METHODS WILL FIRE DURING THE APPROPRIATE STATES (EVERY FRAME)
     void HandleIdle()
     {
-
+        //RANDOMLY SELECT NEW STATE AFTER TIME
+        if (timeTillNextSwitchCurrent < timeTillNextSwitch)
+        {
+            timeTillNextSwitchCurrent += Time.deltaTime;
+            //Debug.Log("WAITING IN IDLE " + (timeTillNextSwitch - timeTillNextSwitchCurrent));
+        }
+        else if (timeTillNextSwitchCurrent >= timeTillNextSwitch)
+        {
+            int randomState = Random.Range(1, System.Enum.GetValues(typeof(dadStates)).Length - 1); //Randomly select a new state (except adjust)
+            dadState = randomState;
+            //Debug.Log("SWITCHING TO NEW RANDOM STATE");
+        }
     }
 
     void HandleAnticipate()
     {
-
+        //If player is caught by dad, go to look state
+        iFrameCurrent += Time.deltaTime;
+        if (iFrameCurrent > iFrames && (button1.IsPressed() || button2.IsPressed()))
+        {
+            Debug.Log("PLAYER CAUGHT");
+            dadState = (int)dadStates.LOOK;
+        } //Else switch back to idle
+        else if (iFrameCurrent > iFrames+0.5f)
+        {
+            Debug.Log("PLAYER NOT CAUGHT");
+            SwitchToIdle();
+        }
     }
 
     void HandleLook()
@@ -102,11 +161,17 @@ public class Dad : MicrogameInputEvents
             iFrameCurrent = 0;
             AudioHandler._instance.CutMusic();
             ReportGameCompletedEarly();
+
+            //PLAY 3-second TV throw animation
+        }
+        else
+        {
+            SwitchToIdle();
         }
     }
 
     void HandleAdjust()
     {
-
+        SwitchToIdle();
     }
 }
