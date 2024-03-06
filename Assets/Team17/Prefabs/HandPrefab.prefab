@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2555096812661431396}
+  - component: {fileID: 126979663347311635}
   m_Layer: 0
   m_Name: HandPrefab
   m_TagString: Untagged
@@ -216,6 +217,23 @@ Transform:
   - {fileID: 6263127731306876190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &126979663347311635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899851623093929694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35aeda3df9fe85546be3b922d057273d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getInputFrom: 0
+  awayAnchor: {fileID: 0}
+  lowerTempAnchor: {fileID: 0}
+  increaseTempAnchor: {fileID: 0}
+  buttonPressAnim: {fileID: 0}
 --- !u!1 &3469025779781511872
 GameObject:
   m_ObjectHideFlags: 0
