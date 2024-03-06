@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 0
-  gameTitle: 
+  gameTitle: Dad's Watching
   gameIcon: {fileID: 0}
-  prompt: 
+  prompt: Dad's Watching
   singlePlayerScene: {fileID: 0}
   twoPlayerScene: {fileID: 0}
   controls:
