@@ -1187,6 +1187,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadYells.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadYells.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d997816a68c2fbd4fa01cca684260399, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadYells.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f196b93d4ef78804aba3701bd2db1057, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadYells.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 93f614bdb6d945f42969780ba7db5417, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d63610e6a8082e54a9f869f4cdf400d8, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14c7602a4a566e44eb15d600d5eb18b3, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 64f08dd45894a36469d1dc8a5c600763, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d1fbb060186daf48ad5268e7c20704a, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57339fb2aacc4614496dcdc180fa5bc8, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: b0582b5b09e063242bf530334c4e70d3, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: dadFakeOuts.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1459161410c08064b8ad2f48cf859bde, type: 3}
     - target: {fileID: 6722922336456285554, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: m_Name
       value: Game Manager
