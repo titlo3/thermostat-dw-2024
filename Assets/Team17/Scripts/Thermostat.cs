@@ -21,13 +21,15 @@ public class Thermostat : MicrogameInputEvents
     bool win = false;
     bool button1Held = false;
     bool button2Held = false;
-    bool windBlowingUp = true;
+    bool dadAdjusted = false;
     [Header("Thermostat Range")]
     public float centerTemp = 20;
     public float tempRange = 30;
     [Header("Needle Properties")]
     [Range(0.001f, 0.02f)]
     public float tempAcceleration = 0.01f;
+    [Range(1f, 10f)]
+    public float jumpScale = 5f;
     [Range(0.2f, 4f)]
     public float sloppyness = 0.5f;
     [Range(0.05f, 2f)]
@@ -45,6 +47,11 @@ public class Thermostat : MicrogameInputEvents
 
     public float getHeat() {
         return (temperature + tempRange - centerTemp) / 2*tempRange ;
+    }
+
+    public float getTargetHeat()
+    {
+        return (tempTarget + tempRange - centerTemp) / 2 * tempRange;
     }
 
     void Start()
@@ -67,6 +74,7 @@ public class Thermostat : MicrogameInputEvents
     void Update()
     {
         if (button1.IsPressed() && !button1Held) {
+            temperature -= (jumpScale / 10f) * Mathf.Abs(tempVelocity * 10f);
             tempVelocity -= tempAcceleration;
             button1Held = true;
         }
@@ -74,16 +82,13 @@ public class Thermostat : MicrogameInputEvents
             button1Held = false;
         }
         if (button2.IsPressed() && !button2Held) {
+            temperature += (jumpScale / 10f) * Mathf.Abs(tempVelocity * 10f);
             tempVelocity += tempAcceleration;
             button2Held = true;
         }
         else if (!button2.IsPressed()) {
             button2Held = false;
         }
-    }
-
-    protected override void OnFifteenSecondsLeft() {
-        dadAdjusting = 75;
     }
 
     void FixedUpdate()
@@ -116,17 +121,27 @@ public class Thermostat : MicrogameInputEvents
         }
         tempDial.transform.eulerAngles = new Vector3(0, 0, -(((temperature - centerTemp) / tempRange) * 90f));
 
+        if (Mathf.Abs(temperature - tempTarget) < acceptRange) {
+            indicator.GetComponent<MeshRenderer>().material = indicatorGreen;
+        }
+        else
+        {
+            indicator.GetComponent<MeshRenderer>().material = indicatorRed;
+        }
+
         if (!win && Mathf.Abs(temperature - tempTarget) < acceptRange)
         {
-            indicator.GetComponent<MeshRenderer>().material = indicatorGreen;
             winTimer -= Time.deltaTime;
             winTimerText.text = winTimer.ToString("#.00");
+            if (!dadAdjusted && winTimer <= 2) {
+                dadAdjusting = 75;
+                dadAdjusted = true;
+            }
             if (winTimer <= 0) {
                 win = true;
             }
         }
         else if(!win && dadAdjusting < 0) {
-            indicator.GetComponent<MeshRenderer>().material = indicatorRed;
             winTimer = timeToWin;
             winTimerText.text = "";
         }
@@ -134,6 +149,7 @@ public class Thermostat : MicrogameInputEvents
         if (win) {
             tempVelocity = 0;
             dadStrength = 100;
+            jumpScale = 0;
             winTimerText.text = "You Win!";
         }
 
