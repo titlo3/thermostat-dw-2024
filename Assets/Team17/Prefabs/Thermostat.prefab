@@ -63,6 +63,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 260fbd5c220afbb4abb5da94ba4e4822, type: 2}
+  - {fileID: 2100000, guid: f159b4378fd9b444095681b4de57f85b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -579,6 +580,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5667052684666568884, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5667052684666568884, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9be54a33b2a0a7347bac899dbc1b65f3, type: 2}
+    - target: {fileID: -5667052684666568884, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23a99c9968233a747bc1ced67f79cf7f, type: 2}
     - target: {fileID: -2982857324082202737, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
       propertyPath: m_Name
       value: Plus
@@ -587,6 +600,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -331792094262141845, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -331792094262141845, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9be54a33b2a0a7347bac899dbc1b65f3, type: 2}
+    - target: {fileID: -331792094262141845, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23a99c9968233a747bc1ced67f79cf7f, type: 2}
     - target: {fileID: 919132149155446097, guid: 53f724f462a94254b9fa2119fca23b63, type: 3}
       propertyPath: m_Name
       value: Buttons
