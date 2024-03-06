@@ -137,5 +137,5 @@ MonoBehaviour:
   spriteLook: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
   spriteAdjust: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
   iFrames: 1
-  randomStateSwitch: {x: 2, y: 4}
+  randomStateSwitch: {x: 3, y: 6}
   randomIdleSwitch: {x: 1, y: 2.5}

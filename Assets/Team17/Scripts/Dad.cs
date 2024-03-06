@@ -160,6 +160,7 @@ public class Dad : MicrogameInputEvents
         {
             iFrameCurrent = 0;
             AudioHandler._instance.CutMusic();
+            AudioHandler._instance.PlayYell();
             ReportGameCompletedEarly();
 
             //PLAY 3-second TV throw animation
