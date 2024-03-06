@@ -53,6 +53,7 @@ public class Thermostat : MicrogameInputEvents
 
 
         temperature = Random.Range(0f, 10f) + 15f;
+
     }
 
     void Update()
@@ -75,33 +76,7 @@ public class Thermostat : MicrogameInputEvents
 
     void FixedUpdate()
     {
-        /* RANDOM MOVEMENT
-         
-        if (windStrength != 0)
-        {
-            windStrength = 3;
-            if (windBlowingUp)
-            {
-                tempVelocity += tempAcceleration / windStrength;
-            }
-            else
-            {
-                tempVelocity -= tempAcceleration / windStrength;
-            }
-
-            windDirectionTimer--;
-            if (windDirectionTimer < 0)
-            {
-                windDirectionTimer = Random.Range(5, 10);
-                windBlowingUp = !windBlowingUp;
-            }
-        }
-
-        */
-
-        /* DAD CHANGES
-        */
-
+        /* DAD CHANGES*/
         windStrength = 4;
 
         if (windStrength != 0)
@@ -121,33 +96,6 @@ public class Thermostat : MicrogameInputEvents
             }
         }
 
-        /*
-        */
-
-        /* CONSTANT PUSH
-        
-
-        if (windStrength != 0)
-        {
-            if (windBlowingUp)
-            {
-                tempVelocity += tempAcceleration / windStrength;
-            }
-            else
-            {
-                tempVelocity -= tempAcceleration / windStrength;
-            }
-
-            windDirectionTimer--;
-            if (windDirectionTimer < 0)
-            {
-                windDirectionTimer = Random.Range(50, 100);
-                windBlowingUp = !windBlowingUp;
-            }
-        }
-
-        
-        */
 
         temperature += tempVelocity;
         if (temperature > centerTemp + tempRange) {
