@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7298820156772961371
+--- !u!1 &616131807257495106
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 20509088505676238}
-  - component: {fileID: 8540364116278371957}
+  - component: {fileID: 3178690616611488437}
+  - component: {fileID: 5915994398507043992}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: dad-default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &20509088505676238
+--- !u!4 &3178690616611488437
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298820156772961371}
+  m_GameObject: {fileID: 616131807257495106}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.58, y: 0.44, z: -3.1739175}
-  m_LocalScale: {x: 1.822, y: 1.822, z: 1.822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6532780207246199594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8540364116278371957
+--- !u!212 &5915994398507043992
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298820156772961371}
+  m_GameObject: {fileID: 616131807257495106}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9056604, g: 0.27910283, b: 0.27910283, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111,10 +111,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6871141, y: -0.06817133, z: 3.1739175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 20509088505676238}
+  - {fileID: 3178690616611488437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &662401316885501617
@@ -131,11 +131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getInputFrom: 0
   dadState: 0
-  sr: {fileID: 8540364116278371957}
-  spriteIdle: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
-  spriteAnticipate: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
-  spriteLook: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
-  spriteAdjust: {fileID: -1849976732, guid: a1590ae4950a9454689989e373828245, type: 3}
+  sr: {fileID: 5915994398507043992}
+  spriteIdle: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
+  spriteAnticipate: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
+  spriteLook: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
+  spriteAdjust: {fileID: 21300000, guid: d86baf9c694633a4496bc7d4ab3f762a, type: 3}
   iFrames: 1
   randomStateSwitch: {x: 4, y: 6}
   randomIdleSwitch: {x: 1, y: 2.5}
