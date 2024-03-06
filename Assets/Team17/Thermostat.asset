@@ -16,9 +16,9 @@ MonoBehaviour:
   teamNumber: 0
   gameTitle: Dad's Watching
   gameIcon: {fileID: 0}
-  prompt: Dad's Watching
-  singlePlayerScene: {fileID: 0}
-  twoPlayerScene: {fileID: 0}
+  prompt: Set the temperature!
+  singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
+  twoPlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   controls:
   - label: Decrease Temperature
     primary: 25
@@ -29,8 +29,8 @@ MonoBehaviour:
     joiner: 0
     secondary: 0
   rightPlayerAltControls: []
-  singlePlayerScenePath: 
-  twoPlayerScenePath: 
+  singlePlayerScenePath: Assets/Team17/Thermostat.unity
+  twoPlayerScenePath: Assets/Team17/Thermostat.unity
   postgameMessages: []
   bannerImage: {fileID: 0}
   developerCredits: []
