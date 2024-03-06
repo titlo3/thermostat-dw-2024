@@ -14,7 +14,8 @@ public class HandAnimation : MicrogameInputEvents
     {
         if (button1.IsPressed() && !button1Held)
         {
-            buttonPressAnim.Play("Hand_LowButtonPress");
+            buttonPressAnim.PlayInFixedTime("Hand_LowButtonPress");
+            //buttonPressAnim.Play("Hand_LowButtonPress");
             button1Held = true;
         }
         else
