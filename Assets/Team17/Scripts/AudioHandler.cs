@@ -15,6 +15,7 @@ public class AudioHandler : MonoBehaviour
     //Create lists for audio groups
     [Header("Audio Groups")]
     [SerializeField] AudioClip[] dadFakeOuts;
+    [SerializeField] AudioClip[] couchRuffles;
     [SerializeField] AudioClip[] dadYells;
     [SerializeField] AudioClip[] buttonClick;
     [SerializeField] AudioClip[] thermostatTick;
@@ -54,7 +55,19 @@ public class AudioHandler : MonoBehaviour
             if (i == randInt)
             {
                 source_dadSounds.PlayOneShot(dadFakeOuts[i]);
-                Debug.Log("PLAYING");
+            }
+        }
+    }
+
+    public void PlayCouchRuffle()
+    {
+        int randInt = Random.Range(0, couchRuffles.Length);
+
+        for (int i = 0; i < couchRuffles.Length; i++)
+        {
+            if (i == randInt)
+            {
+                source_dadSounds.PlayOneShot(couchRuffles[i]);
             }
         }
     }
@@ -98,7 +111,7 @@ public class AudioHandler : MonoBehaviour
     private void Update()
     {
         //HANDLE AUDIO FADES
-        if (fadeInTimeCurrent < fadeInTime)
+        if (fadeInTimeCurrent < fadeInTime && fadingIn)
         {
             fadeInTimeCurrent += Time.deltaTime;
 
