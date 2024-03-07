@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace Team17
 {
@@ -13,6 +15,7 @@ namespace Team17
         public GameObject tempDial;
         public GameObject targetMarker;
         public TextMeshProUGUI winTimerText;
+        public GameObject countdownTimerSlider;
 
         [Header("Indicator")]
         public GameObject indicator;
@@ -197,7 +200,8 @@ namespace Team17
             if (!win && Mathf.Abs(temperature - tempTarget) < acceptRange)
             {
                 winTimer -= Time.deltaTime;
-                winTimerText.text = winTimer.ToString("#.00");
+                //winTimerText.text = winTimer.ToString("#.00");
+                countdownTimerSlider.GetComponent<UnityEngine.UI.Slider>().value = winTimer / timeToWin;
                 if (!dadAdjusted && winTimer <= 2)
                 {
                     dadAdjusting = 45;
