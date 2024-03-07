@@ -328,7 +328,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -97}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164437244
 MonoBehaviour:
@@ -666,6 +666,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490777703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
+  m_PrefabInstance: {fileID: 5930509878380767082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924195ba7438e5d4991cab6a7fad2fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1800834160
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +968,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: thermostat
+      value: 
+      objectReference: {fileID: 1490777703}
     - target: {fileID: 6532780207246199594, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7802155
@@ -1222,7 +1237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: dadStrength
-      value: 3.38
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: winTimerText
