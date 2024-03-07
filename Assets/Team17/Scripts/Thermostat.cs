@@ -42,6 +42,14 @@ public class Thermostat : MicrogameInputEvents
     int dadAdjusting = -101;
     public Dad dad;
 
+    [Header("Buttons")]
+    public MeshRenderer buttonLeft;
+    public MeshRenderer buttonRight;
+    public Material buttonLight;
+    public Material buttonDark;
+
+    float clock = 0;
+
 
     protected override void OnGameStart()
     {
@@ -65,10 +73,10 @@ public class Thermostat : MicrogameInputEvents
     void Start()
     {
         if (Random.Range(0f, 2f) > 1f) {
-            tempTarget = Random.Range(0f, 5f) + centerTemp + tempRange - 7f;
+            tempTarget = Random.Range(0f, 5f) + centerTemp + tempRange - 10f;
         }
         else {
-            tempTarget = Random.Range(0f, 5f) + centerTemp - tempRange +2f;
+            tempTarget = Random.Range(0f, 5f) + centerTemp - tempRange +5f;
         }
 
         Debug.Log(tempTarget);
@@ -101,6 +109,25 @@ public class Thermostat : MicrogameInputEvents
 
     void FixedUpdate()
     {
+        clock += Time.deltaTime;
+
+        if (clock % 1f > 0.5f) {
+            if (temperature > tempTarget)
+            {
+                buttonLeft.material = buttonLight;
+                buttonRight.material = buttonDark;
+            }
+            else {
+                buttonRight.material = buttonLight;
+                buttonLeft.material = buttonDark;
+            }
+        }
+        else
+        {
+            buttonRight.material = buttonDark;
+            buttonLeft.material = buttonDark;
+        }
+
         /* DAD CHANGES*/
 
         if (dadStrength != 0)
@@ -136,6 +163,8 @@ public class Thermostat : MicrogameInputEvents
 
         if (Mathf.Abs(temperature - tempTarget) < acceptRange) {
             indicator.GetComponent<MeshRenderer>().material = indicatorGreen;
+            buttonLeft.material = buttonLight;
+            buttonRight.material = buttonLight;
         }
         else
         {
