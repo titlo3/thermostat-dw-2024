@@ -112,8 +112,6 @@ public class Thermostat : MicrogameInputEvents
     {
         float velInverse = 1f - (Mathf.Abs(tempVelocity));
         float tickFreq = velInverse * velInverse * velInverse * velInverse * velInverse;
-        //Debug.Log(tickFreq);
-        Debug.Log(tempVelocity);
         tickClock += Time.deltaTime;
         if (tickClock > tickFreq && Mathf.Abs(tempVelocity) > 0.001f) {
             AudioHandler._instance.PlayThermostatTick();
