@@ -171,7 +171,18 @@ public class Dad : MicrogameInputEvents
         }
         else
         {
-            SwitchToIdle();
+            //After time, switch back to idle
+            if (timeToSwitchToIdleCurrent < 2.5f)
+            {
+                timeToSwitchToIdleCurrent += Time.deltaTime;
+                Debug.Log("WAITING TO SWITCH TO IDLE");
+            }
+            else if (timeToSwitchToIdleCurrent >= 2.5f)
+            {
+                int idleState = (int)dadStates.IDLE; //Randomly select a new state
+                dadState = idleState;
+                Debug.Log("SWITCHING TO IDLE");
+            }
         }
     }
 
