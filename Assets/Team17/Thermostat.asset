@@ -16,7 +16,7 @@ MonoBehaviour:
   teamNumber: 0
   gameTitle: Dad's Watching
   gameIcon: {fileID: 0}
-  prompt: Set the temperature!
+  prompt: Adjust temperature!
   singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   controls:
