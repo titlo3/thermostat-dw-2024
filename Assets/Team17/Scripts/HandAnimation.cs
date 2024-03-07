@@ -2,43 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandAnimation : MicrogameInputEvents
+namespace Team17
 {
-    [SerializeField] GameObject awayAnchor;
-    [SerializeField] Animator buttonPressAnim;
-    bool button1Held = false;
-    bool button2Held = false;
-
-    // Update is called once per frame
-    void Update()
+    public class HandAnimation : MicrogameInputEvents
     {
-        if (button1.IsPressed() && !button1Held)
-        {
-            buttonPressAnim.PlayInFixedTime("Hand_LowButtonPress");
-            //buttonPressAnim.Play("Hand_LowButtonPress");
-            button1Held = true;
-        }
-        else if (!button1.IsPressed())
-        {
-            transform.position = awayAnchor.transform.position;
-            buttonPressAnim.StopPlayback();
-            button1Held = false;
-        }
+        [SerializeField] GameObject awayAnchor;
+        [SerializeField] Animator buttonPressAnim;
+        bool button1Held = false;
+        bool button2Held = false;
 
-        if (button2.IsPressed() && !button2Held)
+        // Update is called once per frame
+        void Update()
         {
-            buttonPressAnim.Play("Hand_IncButtonPress");
-            button2Held = true;
-        }
-        else if (!button2.IsPressed())
-        {
-            buttonPressAnim.StopPlayback();
-            button2Held = false;
-        }
+            if (button1.IsPressed() && !button1Held)
+            {
+                buttonPressAnim.PlayInFixedTime("Hand_LowButtonPress");
+                //buttonPressAnim.Play("Hand_LowButtonPress");
+                button1Held = true;
+            }
+            else if (!button1.IsPressed())
+            {
+                transform.position = awayAnchor.transform.position;
+                buttonPressAnim.StopPlayback();
+                button1Held = false;
+            }
 
-        if(!button1Held && !button2Held)
-        {
-            transform.position = awayAnchor.transform.position;
+            if (button2.IsPressed() && !button2Held)
+            {
+                buttonPressAnim.Play("Hand_IncButtonPress");
+                button2Held = true;
+            }
+            else if (!button2.IsPressed())
+            {
+                buttonPressAnim.StopPlayback();
+                button2Held = false;
+            }
+
+            if (!button1Held && !button2Held)
+            {
+                transform.position = awayAnchor.transform.position;
+            }
         }
     }
 }
