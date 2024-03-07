@@ -39,7 +39,7 @@ public class Thermostat : MicrogameInputEvents
     [Range(1f, 10f)]
     public float dadStrength = 0;
     float windDirectionTimer = 0;
-    int dadAdjusting = -1;
+    int dadAdjusting = -101;
     public Dad dad;
 
 
@@ -56,6 +56,10 @@ public class Thermostat : MicrogameInputEvents
     public float getTargetHeat()
     {
         return (tempTarget + tempRange - centerTemp) / 2 * tempRange;
+    }
+
+    public void setDadAdjust() {
+        dadAdjusting = 45;
     }
 
     void Start()
@@ -101,9 +105,13 @@ public class Thermostat : MicrogameInputEvents
 
         if (dadStrength != 0)
         {
-            if (dadAdjusting > 0) {
+            if( dadAdjusting > -100)
+            {
                 winTimerText.text = "Dad is adjusting";
                 dad.dadState = (int)Dad.dadStates.ADJUST;
+            }
+
+            if (dadAdjusting > 0) {
                 if (temperature < centerTemp)
                     tempVelocity += tempAcceleration / dadStrength;
                 else
@@ -147,7 +155,7 @@ public class Thermostat : MicrogameInputEvents
                 ReportGameCompletedEarly();
             }
         }
-        else if(!win && dadAdjusting < 0) {
+        else if(!win && dadAdjusting < -100) {
             //winTimer = timeToWin;
             winTimerText.text = "";
         }

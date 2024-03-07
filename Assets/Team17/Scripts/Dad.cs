@@ -11,6 +11,8 @@ public class Dad : MicrogameInputEvents
         ADJUST
     }
 
+    [SerializeField] public Thermostat thermostat;
+
     [SerializeField] public int dadState;
     int previousDadState = -1;
     [SerializeField] SpriteRenderer sr;
@@ -161,7 +163,9 @@ public class Dad : MicrogameInputEvents
             iFrameCurrent = 0;
             AudioHandler._instance.CutMusic();
             AudioHandler._instance.PlayYell();
-            ReportGameCompletedEarly();
+
+            //ReportGameCompletedEarly();
+            thermostat.setDadAdjust();
 
             //PLAY 3-second TV throw animation
         }
