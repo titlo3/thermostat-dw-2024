@@ -38,6 +38,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-5516991122320477311
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CouchRuffle
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b0f2773f07e75804b8cd31efcecfc8a7
+  m_Children: []
+  m_Volume: b63b90b5f6e4dc84b95e27714c8f9257
+  m_Pitch: ec2349de5f56b8047a2898c8efb18a0d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4169448053280807278}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-5362609454315383470
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -48,6 +67,20 @@ AudioMixerEffectController:
   m_EffectID: ba486dd9d080cd94ca185bdf5fc238f2
   m_EffectName: Attenuation
   m_MixLevel: ff1cd707073defe4d9ff0a4a7a0f4c68
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-4169448053280807278
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b48a0b2b40abef64ab20fbf8e46161b8
+  m_EffectName: Attenuation
+  m_MixLevel: 93c7cb620f61ff648a877787e2008de6
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -122,6 +155,7 @@ AudioMixerController:
     - 6d3f4f5c3447de9439bcf72c1ba644c1
     - 54a9f01e28215bb43958ee2468e065e0
     - 2403eb43ad2b3c144aebfa706ad9ef28
+    - b0f2773f07e75804b8cd31efcecfc8a7
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -139,6 +173,7 @@ AudioMixerGroupController:
   - {fileID: 5416800461075196078}
   - {fileID: -7294185405913434675}
   - {fileID: -2673075677986488314}
+  - {fileID: -5516991122320477311}
   m_Volume: bc0b677ad431581468b7b1562d0b8c75
   m_Pitch: fc51eb0e3022907469a52848dd005763
   m_Send: 00000000000000000000000000000000
@@ -174,6 +209,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     b502736113d3ad64fb105c0f73a703bb: -7.436929
     3085f5d2753360a42a8d0fd7746c1ae5: 5.163456
+    b63b90b5f6e4dc84b95e27714c8f9257: -5.3230715
     bc0b677ad431581468b7b1562d0b8c75: 12
   m_TransitionOverrides: {}
 --- !u!244 &4850801644599702642

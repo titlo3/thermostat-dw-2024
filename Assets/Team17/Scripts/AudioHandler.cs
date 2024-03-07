@@ -11,6 +11,7 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] AudioSource source_thermostatSounds;
     [SerializeField] AudioSource source_dadSounds;
     [SerializeField] AudioSource source_sfx;
+    [SerializeField] AudioSource source_couch;
 
     //Create lists for audio groups
     [Header("Audio Groups")]
@@ -68,7 +69,7 @@ public class AudioHandler : MonoBehaviour
         {
             if (i == randInt)
             {
-                source_sfx.PlayOneShot(couchRuffles[i]);
+                source_couch.PlayOneShot(couchRuffles[i]);
             }
         }
     }
