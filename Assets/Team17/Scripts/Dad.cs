@@ -56,7 +56,7 @@ namespace Team17
                 {
                     case dadStates.IDLE:
                         sr.sprite = spriteIdle;
-                        sr.color = Color.green; //TEMPORARY
+                        //sr.color = Color.green; //TEMPORARY
                         TV.sprite = TVnormal;
                         AudioHandler._instance.ReturnMusic();
                         //AudioHandler._instance.PlayCouchRuffle();
@@ -65,7 +65,7 @@ namespace Team17
                         break;
                     case dadStates.ANTICIPATE:
                         sr.sprite = spriteAnticipate;
-                        sr.color = Color.yellow; //TEMPORARY
+                        //sr.color = Color.yellow; //TEMPORARY
                         TV.sprite = TVnormal;
                         AudioHandler._instance.PlayCouchRuffle();
                         AudioHandler._instance.PlayFakeOut();
@@ -75,7 +75,7 @@ namespace Team17
                         break;
                     case dadStates.LOOK:
                         sr.sprite = spriteLook;
-                        sr.color = Color.red; //TEMPORARY
+                        //sr.color = Color.red; //TEMPORARY
                         TV.sprite = TVnormal;
                         AudioHandler._instance.PlayCouchRuffle();
                         AudioHandler._instance.PlayFakeOut();
@@ -86,7 +86,7 @@ namespace Team17
                         break;
                     case dadStates.ADJUST:
                         sr.sprite = spriteAdjust;
-                        sr.color = Color.green; //TEMPORARY
+                        //sr.color = Color.green; //TEMPORARY
                         TV.sprite = TVadjust;
                         AudioHandler._instance.PlayCouchRuffle();
                         timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle

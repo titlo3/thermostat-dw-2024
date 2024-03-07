@@ -1224,9 +1224,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: cb2fff65d53cbca489de3bd43539fa18, type: 3}
     - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: spriteIdle
+      value: 
+      objectReference: {fileID: 21300000, guid: bc3600ac90cec324599fd49785ce24ac, type: 3}
+    - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: spriteLook
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e7120f522238834b9e93bc61915da13, type: 3}
+    - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: thermostat
       value: 
       objectReference: {fileID: 1490777703}
+    - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: spriteAdjust
+      value: 
+      objectReference: {fileID: 21300000, guid: b9e8880e0018ca74ba0c964e4337128b, type: 3}
+    - target: {fileID: 662401316885501617, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: spriteAnticipate
+      value: 
+      objectReference: {fileID: 21300000, guid: 288ac50303adcd54f9eedc60937d8dc1, type: 3}
     - target: {fileID: 6532780207246199594, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7802155
