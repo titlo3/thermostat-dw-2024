@@ -46,6 +46,7 @@ public class Thermostat : MicrogameInputEvents
     protected override void OnGameStart()
     {
         base.OnGameStart();
+        winTimer = timeToWin;
     }
 
     public float getHeat() {
@@ -147,7 +148,7 @@ public class Thermostat : MicrogameInputEvents
             }
         }
         else if(!win && dadAdjusting < 0) {
-            winTimer = timeToWin;
+            //winTimer = timeToWin;
             winTimerText.text = "";
         }
 
