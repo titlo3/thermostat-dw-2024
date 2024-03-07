@@ -35,7 +35,7 @@ MonoBehaviour:
   twoPlayerScenePath: 
   postgameMessages:
   - That's one cool dad!
-  bannerImage: {fileID: 0}
+  bannerImage: {fileID: 21300000, guid: d649bbf3f14f537408d32ede66b64613, type: 3}
   developerCredits:
   - Adam Anderson
   - Kaleb Brooks
