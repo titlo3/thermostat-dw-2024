@@ -24,6 +24,11 @@ namespace Team17
         [SerializeField] Sprite spriteLook;
         [SerializeField] Sprite spriteAdjust;
 
+        [Header("TV Sprites:")]
+        [SerializeField] SpriteRenderer TV;
+        [SerializeField] Sprite TVnormal;
+        [SerializeField] Sprite TVadjust;
+
         [Header("Tuners:")]
         [SerializeField][Range(0f, 2f)][Tooltip("Determines how much invincibility time player has after dad turns around")] float iFrames;
         float iFrameCurrent;
@@ -52,6 +57,7 @@ namespace Team17
                     case dadStates.IDLE:
                         sr.sprite = spriteIdle;
                         sr.color = Color.green; //TEMPORARY
+                        TV.sprite = TVnormal;
                         AudioHandler._instance.ReturnMusic();
                         //AudioHandler._instance.PlayCouchRuffle();
                         timeTillNextSwitch = Random.Range(randomStateSwitch.x, randomStateSwitch.y); //Time until next random state switch
@@ -60,6 +66,7 @@ namespace Team17
                     case dadStates.ANTICIPATE:
                         sr.sprite = spriteAnticipate;
                         sr.color = Color.yellow; //TEMPORARY
+                        TV.sprite = TVnormal;
                         AudioHandler._instance.PlayCouchRuffle();
                         AudioHandler._instance.PlayFakeOut();
                         timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
@@ -69,6 +76,7 @@ namespace Team17
                     case dadStates.LOOK:
                         sr.sprite = spriteLook;
                         sr.color = Color.red; //TEMPORARY
+                        TV.sprite = TVnormal;
                         AudioHandler._instance.PlayCouchRuffle();
                         AudioHandler._instance.PlayFakeOut();
                         AudioHandler._instance.CutMusic();
@@ -78,7 +86,8 @@ namespace Team17
                         break;
                     case dadStates.ADJUST:
                         sr.sprite = spriteAdjust;
-                        sr.color = Color.blue; //TEMPORARY
+                        sr.color = Color.green; //TEMPORARY
+                        TV.sprite = TVadjust;
                         AudioHandler._instance.PlayCouchRuffle();
                         timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
                         timeToSwitchToIdleCurrent = 0;
