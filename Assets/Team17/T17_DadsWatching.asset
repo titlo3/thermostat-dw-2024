@@ -34,14 +34,14 @@ MonoBehaviour:
   singlePlayerScenePath: Assets/Team17/Thermostat.unity
   twoPlayerScenePath: 
   postgameMessages:
-  - That's one hot dad!
   - That's one cool dad!
   bannerImage: {fileID: 0}
   developerCredits:
-  - Belphy
+  - Adam Anderson
   - Kaleb Brooks
   - Tristain Coghlan
-  - 'Fan '
-  - Leon
-  - Leon
+  - Fan Yi
+  - Yunxu Gu
+  - Christopher Anderson-Lundy
+  - Charlie Finlay
   licensedWorksCredits: []
