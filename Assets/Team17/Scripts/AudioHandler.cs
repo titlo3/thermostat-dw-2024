@@ -1,138 +1,141 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AudioHandler : MonoBehaviour
+namespace Team17
 {
-    public static AudioHandler _instance;
-
-    //Audio Sources
-    [Header("Audio Sources")]
-    [SerializeField] AudioSource source_musicSource;
-    [SerializeField] AudioSource source_thermostatSounds;
-    [SerializeField] AudioSource source_dadSounds;
-    [SerializeField] AudioSource source_sfx;
-    [SerializeField] AudioSource source_couch;
-
-    //Create lists for audio groups
-    [Header("Audio Groups")]
-    [SerializeField] AudioClip[] dadFakeOuts;
-    [SerializeField] AudioClip[] couchRuffles;
-    [SerializeField] AudioClip[] dadYells;
-    [SerializeField] AudioClip[] buttonClick;
-    [SerializeField] AudioClip[] thermostatTick;
-    [Header("Looping Audio")]
-
-    //Music stuff
-    [Header("Music Control")]
-    [SerializeField][Tooltip("Determines how the audio fades back in")] AnimationCurve fadeInCurve;
-    [SerializeField][Range(0, 5)] float fadeInTime;
-    float fadeInTimeCurrent;
-    bool fadingIn = false;
-
-    private void Start()
+    public class AudioHandler : MonoBehaviour
     {
-        //SET UP OBJECT AS SINGLETON
-        if (_instance == null)
+        public static AudioHandler _instance;
+
+        //Audio Sources
+        [Header("Audio Sources")]
+        [SerializeField] AudioSource source_musicSource;
+        [SerializeField] AudioSource source_thermostatSounds;
+        [SerializeField] AudioSource source_dadSounds;
+        [SerializeField] AudioSource source_sfx;
+        [SerializeField] AudioSource source_couch;
+
+        //Create lists for audio groups
+        [Header("Audio Groups")]
+        [SerializeField] AudioClip[] dadFakeOuts;
+        [SerializeField] AudioClip[] couchRuffles;
+        [SerializeField] AudioClip[] dadYells;
+        [SerializeField] AudioClip[] buttonClick;
+        [SerializeField] AudioClip[] thermostatTick;
+        [Header("Looping Audio")]
+
+        //Music stuff
+        [Header("Music Control")]
+        [SerializeField][Tooltip("Determines how the audio fades back in")] AnimationCurve fadeInCurve;
+        [SerializeField][Range(0, 5)] float fadeInTime;
+        float fadeInTimeCurrent;
+        bool fadingIn = false;
+
+        private void Start()
         {
-            _instance = this;
-            Debug.Log("Audiohandler set successfully");
-        }
-        else
-            Destroy(gameObject);
-
-        fadeInTimeCurrent = fadeInTime;
-
-        CutMusic();
-        ReturnMusic();
-    }
-
-
-    //AUDIO EVENTS
-    public void PlayFakeOut()
-    {
-        int randInt = Random.Range(0, dadFakeOuts.Length);
-
-        for (int i = 0; i < dadFakeOuts.Length; i++)
-        {
-            if (i == randInt)
+            //SET UP OBJECT AS SINGLETON
+            if (_instance == null)
             {
-                source_dadSounds.PlayOneShot(dadFakeOuts[i]);
+                _instance = this;
+                Debug.Log("Audiohandler set successfully");
+            }
+            else
+                Destroy(gameObject);
+
+            fadeInTimeCurrent = fadeInTime;
+
+            CutMusic();
+            ReturnMusic();
+        }
+
+
+        //AUDIO EVENTS
+        public void PlayFakeOut()
+        {
+            int randInt = Random.Range(0, dadFakeOuts.Length);
+
+            for (int i = 0; i < dadFakeOuts.Length; i++)
+            {
+                if (i == randInt)
+                {
+                    source_dadSounds.PlayOneShot(dadFakeOuts[i]);
+                }
             }
         }
-    }
 
-    public void PlayCouchRuffle()
-    {
-        int randInt = Random.Range(0, couchRuffles.Length);
-
-        for (int i = 0; i < couchRuffles.Length; i++)
+        public void PlayCouchRuffle()
         {
-            if (i == randInt)
+            int randInt = Random.Range(0, couchRuffles.Length);
+
+            for (int i = 0; i < couchRuffles.Length; i++)
             {
-                source_couch.PlayOneShot(couchRuffles[i]);
+                if (i == randInt)
+                {
+                    source_couch.PlayOneShot(couchRuffles[i]);
+                }
             }
         }
-    }
-    public void PlayYell()
-    {
-        int randInt = Random.Range(0, dadYells.Length);
-
-        for (int i = 0; i < dadYells.Length; i++)
+        public void PlayYell()
         {
-            if (i == randInt)
+            int randInt = Random.Range(0, dadYells.Length);
+
+            for (int i = 0; i < dadYells.Length; i++)
             {
-                source_dadSounds.PlayOneShot(dadYells[i]);
+                if (i == randInt)
+                {
+                    source_dadSounds.PlayOneShot(dadYells[i]);
+                }
             }
         }
-    }
-    public void PlayButtonClick()
-    {
-        int randInt = Random.Range(0, buttonClick.Length);
-
-        for (int i = 0; i < buttonClick.Length; i++)
+        public void PlayButtonClick()
         {
-            if (i == randInt)
+            int randInt = Random.Range(0, buttonClick.Length);
+
+            for (int i = 0; i < buttonClick.Length; i++)
             {
-                source_thermostatSounds.PlayOneShot(buttonClick[i]);
+                if (i == randInt)
+                {
+                    source_thermostatSounds.PlayOneShot(buttonClick[i]);
+                }
             }
         }
-    }
-    public void PlayThermostatTick()
-    {
-        int randInt = Random.Range(0, thermostatTick.Length);
-
-        for (int i = 0; i < thermostatTick.Length; i++)
+        public void PlayThermostatTick()
         {
-            if (i == randInt)
+            int randInt = Random.Range(0, thermostatTick.Length);
+
+            for (int i = 0; i < thermostatTick.Length; i++)
             {
-                source_thermostatSounds.PlayOneShot(thermostatTick[i]);
+                if (i == randInt)
+                {
+                    source_thermostatSounds.PlayOneShot(thermostatTick[i]);
+                }
             }
         }
-    }
 
-    private void Update()
-    {
-        //HANDLE AUDIO FADES
-        if (fadeInTimeCurrent < fadeInTime && fadingIn)
+        private void Update()
         {
-            fadeInTimeCurrent += Time.deltaTime;
+            //HANDLE AUDIO FADES
+            if (fadeInTimeCurrent < fadeInTime && fadingIn)
+            {
+                fadeInTimeCurrent += Time.deltaTime;
 
-            source_musicSource.volume = fadeInCurve.Evaluate(fadeInTimeCurrent / fadeInTime);
+                source_musicSource.volume = fadeInCurve.Evaluate(fadeInTimeCurrent / fadeInTime);
+            }
+
         }
 
-    }
 
+        //FOR WHEN DAD LOOKS AT YOU
+        public void CutMusic()
+        {
+            source_musicSource.volume = 0;
+            fadeInTimeCurrent = 0;
+            fadingIn = false;
+        }
 
-    //FOR WHEN DAD LOOKS AT YOU
-    public void CutMusic()
-    {
-        source_musicSource.volume = 0;
-        fadeInTimeCurrent = 0;
-        fadingIn = false;
-    }
-
-    public void ReturnMusic()
-    {
-        fadingIn = true;
+        public void ReturnMusic()
+        {
+            fadingIn = true;
+        }
     }
 }

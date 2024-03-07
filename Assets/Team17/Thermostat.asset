@@ -16,11 +16,11 @@ MonoBehaviour:
   teamNumber: 17
   gameTitle: Dad's Watching
   gameIcon: {fileID: 21300000, guid: 3f8e8f001f64c7b4b979a2cb0c21aca2, type: 3}
-  announcerText: Match temperature!
+  announcerText: Match temperature
   announcerAudioFile: Match Temperature-RX10MDc_183-01
   _announcerAudio: {fileID: 8300000, guid: b021f4b583d611140a16ec18d7671d4e, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
-  twoPlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
+  twoPlayerScene: {fileID: 0}
   controls:
   - label: Decrease Temperature
     primary: 25
@@ -32,7 +32,7 @@ MonoBehaviour:
     secondary: 0
   rightPlayerAltControls: []
   singlePlayerScenePath: Assets/Team17/Thermostat.unity
-  twoPlayerScenePath: Assets/Team17/Thermostat.unity
+  twoPlayerScenePath: 
   postgameMessages:
   - That's one hot dad!
   - That's one cool dad!
