@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24fbde2c24ab1544bd81b52842e8ec5, type: 3}
-  m_Name: Thermostat
+  m_Name: T17_DadsWatching
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 17
