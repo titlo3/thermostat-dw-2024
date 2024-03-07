@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb814276f89cf54cbd9835fcedc633d, type: 3}
   m_Name: GamesIndex
   m_EditorClassIdentifier: 
-  <sourcePath>k__BackingField: 
-  <destinationPath>k__BackingField: Imported
+  enableImport: 0
   quickTestSkip: 20
   quickTestPlayers: 1
   _avoidRepeatsWithin: 5
   _singlePlayer:
   - {fileID: 11400000, guid: d0bf6061031c0574ba1ccd44678e328c, type: 2}
   _twoPlayer:
-  - {fileID: 11400000, guid: d0bf6061031c0574ba1ccd44678e328c, type: 2}
+  - {fileID: 0}

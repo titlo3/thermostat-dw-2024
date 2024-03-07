@@ -201,7 +201,7 @@ namespace Team17
             {
                 winTimer -= Time.deltaTime;
                 //winTimerText.text = winTimer.ToString("#.00");
-                countdownTimerSlider.GetComponent<Slider>().value = winTimer / timeToWin;
+                countdownTimerSlider.GetComponent<UnityEngine.UI.Slider>().value = winTimer / timeToWin;
                 if (!dadAdjusted && winTimer <= 2)
                 {
                     dadAdjusting = 45;
