@@ -808,6 +808,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: buttonClick.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: dadFakeOuts.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -868,6 +872,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ee02d3605f92e25479df97a73511b7a2, type: 3}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: buttonClick.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7880eeae329bb74aa18c2421d68ca22, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: dadFakeOuts.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: ab4b9a820c1b2f44bae00d34de406eab, type: 3}
@@ -908,9 +916,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 9ea5594f2f7642c40b42ebe4d8abceb4, type: 3}
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: thermostatTick.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: couchRuffles.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 96d3a2cc574148b4ebe186c93a1de4f9, type: 3}
+    - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: thermostatTick.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f808d2b7410a5a342bb011e51e6adbfb, type: 3}
     - target: {fileID: 6722922336456285554, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -954,6 +970,10 @@ PrefabInstance:
     - target: {fileID: 7036180529362507451, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119416259727737078, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
+      propertyPath: m_Volume
+      value: 0.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1253,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 5930509878380767085}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: dadStrength
-      value: 1.42
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: winTimerText

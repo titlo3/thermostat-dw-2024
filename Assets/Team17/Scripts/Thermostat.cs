@@ -49,6 +49,7 @@ public class Thermostat : MicrogameInputEvents
     public Material buttonDark;
 
     float clock = 0;
+    float tickClock = 0;
 
 
     protected override void OnGameStart()
@@ -109,6 +110,17 @@ public class Thermostat : MicrogameInputEvents
 
     void FixedUpdate()
     {
+        float velInverse = 1f - (Mathf.Abs(tempVelocity));
+        float tickFreq = velInverse * velInverse * velInverse * velInverse * velInverse;
+        //Debug.Log(tickFreq);
+        Debug.Log(tempVelocity);
+        tickClock += Time.deltaTime;
+        if (tickClock > tickFreq && Mathf.Abs(tempVelocity) > 0.001f) {
+            AudioHandler._instance.PlayThermostatTick();
+            tickClock = 0;
+        }
+
+
         clock += Time.deltaTime;
 
         if (clock % 1f > 0.5f) {
