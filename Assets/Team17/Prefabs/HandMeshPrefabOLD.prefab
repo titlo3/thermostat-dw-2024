@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 126979663347311635}
   - component: {fileID: 6117986104349633583}
   m_Layer: 0
-  m_Name: HandMeshPrefab
+  m_Name: HandMeshPrefabOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
