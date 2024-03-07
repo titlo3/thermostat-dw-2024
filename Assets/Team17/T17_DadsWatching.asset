@@ -15,7 +15,7 @@ MonoBehaviour:
   includeInRandomizer: 1
   teamNumber: 17
   gameTitle: Dad's Watching
-  gameIcon: {fileID: 21300000, guid: 3f8e8f001f64c7b4b979a2cb0c21aca2, type: 3}
+  gameIcon: {fileID: 21300000, guid: f379f812640fe744d9e6bf6156ee164b, type: 3}
   announcerText: Match temperature
   announcerAudioFile: Match Temperature-RX10MDc_183-01
   _announcerAudio: {fileID: 8300000, guid: b021f4b583d611140a16ec18d7671d4e, type: 3}
