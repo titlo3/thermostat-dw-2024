@@ -61,12 +61,12 @@ namespace Team17
 
         public float getHeat()
         {
-            return (temperature + tempRange - centerTemp) / 2 * tempRange;
+            return (temperature + tempRange - centerTemp) / 2f * tempRange;
         }
 
         public float getTargetHeat()
         {
-            return (tempTarget + tempRange - centerTemp) / 2 * tempRange;
+            return (tempTarget + tempRange - centerTemp) / 2f * tempRange;
         }
 
         public void setDadAdjust()
