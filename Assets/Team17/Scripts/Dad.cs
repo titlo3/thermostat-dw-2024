@@ -51,7 +51,7 @@ public class Dad : MicrogameInputEvents
                     sr.sprite = spriteIdle;
                     sr.color = Color.green; //TEMPORARY
                     AudioHandler._instance.ReturnMusic();
-                    AudioHandler._instance.PlayCouchRuffle();
+                    //AudioHandler._instance.PlayCouchRuffle();
                     timeTillNextSwitch = Random.Range(randomStateSwitch.x, randomStateSwitch.y); //Time until next random state switch
                     timeTillNextSwitchCurrent = 0;
                     break;

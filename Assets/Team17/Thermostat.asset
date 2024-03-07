@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Thermostat
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 17
   gameTitle: Dad's Watching
   gameIcon: {fileID: 0}
-  prompt: Adjust temperature!
+  announcerText: Adjust temperature!
+  announcerAudioFile: 
+  _announcerAudio: {fileID: 0}
   singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   controls:
