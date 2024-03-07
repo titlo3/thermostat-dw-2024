@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
 
 namespace Team17
 {
@@ -48,6 +49,9 @@ namespace Team17
         public MeshRenderer buttonRight;
         public Material buttonLight;
         public Material buttonDark;
+
+        [Header("Countdown Bar")]
+        public Slider countdown;
 
         float clock = 0;
         float tickClock = 0;
