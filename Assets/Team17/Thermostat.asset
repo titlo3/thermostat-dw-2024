@@ -16,9 +16,9 @@ MonoBehaviour:
   teamNumber: 17
   gameTitle: Dad's Watching
   gameIcon: {fileID: 0}
-  announcerText: Adjust temperature!
-  announcerAudioFile: 
-  _announcerAudio: {fileID: 0}
+  announcerText: Match temperature!
+  announcerAudioFile: Match Temperature-RX10MDc_184-01
+  _announcerAudio: {fileID: 8300000, guid: 6b7e5bade5063fd48b10951b698e276e, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   controls:

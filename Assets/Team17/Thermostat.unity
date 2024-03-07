@@ -910,7 +910,7 @@ PrefabInstance:
     - target: {fileID: 2276911239121854075, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: couchRuffles.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: d96c11c216691214bb63faa86488ea23, type: 3}
+      objectReference: {fileID: 8300000, guid: 96d3a2cc574148b4ebe186c93a1de4f9, type: 3}
     - target: {fileID: 6722922336456285554, guid: eed58f578495f7546b7ddb268221ed1f, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -1159,6 +1159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398596985834208527, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 584194017021685955, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.98
