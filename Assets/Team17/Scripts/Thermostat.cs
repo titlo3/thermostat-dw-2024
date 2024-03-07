@@ -40,7 +40,6 @@ namespace Team17
         public float timeToWin = 3;
         [Range(1f, 10f)]
         public float dadStrength = 0;
-        float windDirectionTimer = 0;
         int dadAdjusting = -101;
         public Dad dad;
 

@@ -37,7 +37,7 @@ namespace Team17
             if (_instance == null)
             {
                 _instance = this;
-                Debug.Log("Audiohandler set successfully");
+                //Debug.Log("Audiohandler set successfully");
             }
             else
                 Destroy(gameObject);
