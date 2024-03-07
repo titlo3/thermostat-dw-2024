@@ -1214,11 +1214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: acceptRange
-      value: 0.94
+      value: 1.295
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: dadStrength
-      value: 2.44
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 7577228734933164152, guid: 43710f0270b5e60468e3eb9a0dc9c8da, type: 3}
       propertyPath: winTimerText

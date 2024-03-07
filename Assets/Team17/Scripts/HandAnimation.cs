@@ -18,7 +18,7 @@ public class HandAnimation : MicrogameInputEvents
             //buttonPressAnim.Play("Hand_LowButtonPress");
             button1Held = true;
         }
-        else
+        else if (!button1.IsPressed())
         {
             transform.position = awayAnchor.transform.position;
             buttonPressAnim.StopPlayback();
@@ -30,7 +30,7 @@ public class HandAnimation : MicrogameInputEvents
             buttonPressAnim.Play("Hand_IncButtonPress");
             button2Held = true;
         }
-        else
+        else if (!button2.IsPressed())
         {
             buttonPressAnim.StopPlayback();
             button2Held = false;
