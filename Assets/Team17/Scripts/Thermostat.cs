@@ -46,11 +46,11 @@ namespace Team17
         int dadAdjusting = -101;
         public Dad dad;
 
-        [Header("Buttons")]
+       /* [Header("Buttons")]
         public MeshRenderer buttonLeft;
         public MeshRenderer buttonRight;
         public Material buttonLight;
-        public Material buttonDark;
+        public Material buttonDark; */
 
         float clock = 0;
         float tickClock = 0;
@@ -132,7 +132,7 @@ namespace Team17
 
             clock += Time.deltaTime;
 
-            if (clock % 1f > 0.5f)
+           /* if (clock % 1f > 0.5f)
             {
                 if (temperature > tempTarget)
                 {
@@ -149,7 +149,7 @@ namespace Team17
             {
                 buttonRight.material = buttonDark;
                 buttonLeft.material = buttonDark;
-            }
+            } */
 
             /* DAD CHANGES*/
 
@@ -189,8 +189,8 @@ namespace Team17
             if (Mathf.Abs(temperature - tempTarget) < acceptRange)
             {
                 indicator.GetComponent<MeshRenderer>().material = indicatorGreen;
-                buttonLeft.material = buttonLight;
-                buttonRight.material = buttonLight;
+              //  buttonLeft.material = buttonLight;
+               // buttonRight.material = buttonLight;
             }
             else
             {

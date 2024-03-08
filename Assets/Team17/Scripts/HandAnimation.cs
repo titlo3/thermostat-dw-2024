@@ -11,14 +11,36 @@ namespace Team17
         bool button1Held = false;
         bool button2Held = false;
 
+        [Header("Buttons")]
+        public MeshRenderer buttonLeft;
+        public MeshRenderer buttonRight;
+        public Material buttonLight;
+        public Material buttonDark;
+
+        public float lightTimer;
+        public float lightTimerMax = 0.1f;
+
         // Update is called once per frame
         void Update()
         {
+            
+            if (lightTimer > 0)
+            {
+                lightTimer -= Time.deltaTime;
+            } else
+            {
+                buttonLeft.material = buttonDark;
+                buttonRight.material = buttonDark;
+            }
+
             if (button1.IsPressed() && !button1Held)
             {
-                buttonPressAnim.PlayInFixedTime("Hand_LowButtonPress");
-                //buttonPressAnim.Play("Hand_LowButtonPress");
+                buttonPressAnim.Play("Hand_LowButtonPress");
                 button1Held = true;
+
+                buttonLeft.material = buttonLight;
+                lightTimer = lightTimerMax;
+
             }
             else if (!button1.IsPressed())
             {
@@ -31,6 +53,9 @@ namespace Team17
             {
                 buttonPressAnim.Play("Hand_IncButtonPress");
                 button2Held = true;
+
+                buttonRight.material = buttonLight;
+                lightTimer = lightTimerMax;
             }
             else if (!button2.IsPressed())
             {
