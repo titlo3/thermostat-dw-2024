@@ -10,7 +10,8 @@ namespace Team17
             IDLE,
             ANTICIPATE,
             LOOK,
-            ADJUST
+            ADJUST,
+            ASLEEP
         }
 
         [SerializeField] public Thermostat thermostat;
@@ -23,6 +24,7 @@ namespace Team17
         [SerializeField] Sprite spriteAnticipate;
         [SerializeField] Sprite spriteLook;
         [SerializeField] Sprite spriteAdjust;
+        [SerializeField] Sprite spriteAsleep;
 
         [Header("TV Sprites:")]
         [SerializeField] SpriteRenderer TV;
@@ -91,6 +93,9 @@ namespace Team17
                         AudioHandler._instance.PlayCouchRuffle();
                         timeToSwitchToIdle = Random.Range(randomIdleSwitch.x, randomIdleSwitch.y); //Time until next random switch back to idle
                         timeToSwitchToIdleCurrent = 0;
+                        break;
+                    case dadStates.ASLEEP:
+                        sr.sprite = spriteAsleep;
                         break;
                 }
                 // Update the previous state to the current state
@@ -200,6 +205,13 @@ namespace Team17
         void HandleAdjust()
         {
             SwitchToIdle();
+        }
+
+        protected override void OnTimesUp()
+        {
+            base.OnTimesUp();
+            AudioHandler._instance.PlayYell();
+            GetComponent<LoseAnimationController>().enabled = true;
         }
     }
 }

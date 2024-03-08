@@ -225,6 +225,7 @@ namespace Team17
                 dadStrength = 100;
                 jumpScale = 0;
                 winTimerText.text = "You Win!";
+                dad.dadState = (int)Dad.dadStates.ASLEEP;
             }
 
 

@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace Team17
 {
-    public class VFXHandler : MonoBehaviour
+    public class VFXHandler : MicrogameEvents
     {
         [Header("Heat Levels: (Not adjustable at runtime)")]
         [SerializeField][Range(0f, 1f)] float heatLevel;
