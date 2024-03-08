@@ -9,7 +9,7 @@ public class LoseAnimationController : MonoBehaviour
         PICKUP,
         THROW
     }
-    [SerializeField] States states = States.DEFAULT;
+    [SerializeField] public States states = States.DEFAULT;
     [SerializeField] GameObject dadDefault;
     [SerializeField] GameObject dadPickUp;
     [SerializeField] GameObject dadThrow;
