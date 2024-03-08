@@ -22,11 +22,11 @@ MonoBehaviour:
   singlePlayerScene: {fileID: 102900000, guid: fc430626003ba544a9c684bc8836dd4e, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
-  - label: Decrease Temperature
+  - label: (Mash) Decrease Temperature
     primary: 25
     joiner: 0
     secondary: 0
-  - label: Increase Temperature
+  - label: (Mash) Increase Temperature
     primary: 26
     joiner: 0
     secondary: 0

@@ -3,47 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ThrownTV : MonoBehaviour
+namespace Team17
 {
-    [SerializeField] GameObject startpoint;
-    [SerializeField] GameObject endpoint;
-
-    [Header("Animation Settings: ")]
-    [SerializeField] float animationTime;
-    float animationTimeC;
-
-    [SerializeField] [Range(0, 6)] float verticalAnimationScaler;
-    [SerializeField] AnimationCurve verticalAnimation;
-
-    [SerializeField] AnimationCurve horizontalAnimation;
-
-    [SerializeField] float rotationSpeed;
-
-    [SerializeField] Vector2 sizeRange;
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class ThrownTV : MonoBehaviour
     {
-        transform.position = startpoint.transform.position;
-    }
+        [SerializeField] GameObject startpoint;
+        [SerializeField] GameObject endpoint;
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (animationTimeC < animationTime)
+        [Header("Animation Settings: ")]
+        [SerializeField] float animationTime;
+        float animationTimeC;
+
+        [SerializeField][Range(0, 6)] float verticalAnimationScaler;
+        [SerializeField] AnimationCurve verticalAnimation;
+
+        [SerializeField] AnimationCurve horizontalAnimation;
+
+        [SerializeField] float rotationSpeed;
+
+        [SerializeField] Vector2 sizeRange;
+
+
+
+
+        // Start is called before the first frame update
+        void Start()
         {
-            animationTimeC += Time.deltaTime;
-            transform.position = Vector3.Lerp(startpoint.transform.position, endpoint.transform.position, animationTimeC / animationTime);
-            transform.position += new Vector3(0, verticalAnimation.Evaluate(animationTimeC) * verticalAnimationScaler, 0);
-            transform.Rotate(0, 0, rotationSpeed);
-            transform.localScale = Vector2.one * Mathf.Lerp(sizeRange.x, sizeRange.y, animationTimeC / animationTime);
+            transform.position = startpoint.transform.position;
         }
-        else
+
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            GetComponent<Animator>().enabled = false;
+            if (animationTimeC < animationTime)
+            {
+                animationTimeC += Time.deltaTime;
+                transform.position = Vector3.Lerp(startpoint.transform.position, endpoint.transform.position, animationTimeC / animationTime);
+                transform.position += new Vector3(0, verticalAnimation.Evaluate(animationTimeC) * verticalAnimationScaler, 0);
+                transform.Rotate(0, 0, rotationSpeed);
+                transform.localScale = Vector2.one * Mathf.Lerp(sizeRange.x, sizeRange.y, animationTimeC / animationTime);
+            }
+            else
+            {
+                GetComponent<Animator>().enabled = false;
+            }
         }
     }
 }

@@ -1,78 +1,82 @@
 using UnityEngine;
 
-public class LoseAnimationController : MonoBehaviour
+namespace Team17
 {
-    [System.Serializable]
-    public enum States
+
+    public class LoseAnimationController : MonoBehaviour
     {
-        DEFAULT,
-        PICKUP,
-        THROW
-    }
-    [SerializeField] public States states = States.DEFAULT;
-    [SerializeField] GameObject dadDefault;
-    [SerializeField] GameObject dadPickUp;
-    [SerializeField] GameObject dadThrow;
-
-    [Header("TUNERS")]
-    [SerializeField]
-    [Range(0f,2f)] float timeToSwitch;
-    float timeToSwitchC;
-
-    [Header("=====# TV THROW STUFF #=====")]
-    [SerializeField]
-    [Range(0,3)] float timeToThrow;
-    float timeToThrowC;
-    [SerializeField] GameObject thrownTV;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        switch (states)
+        [System.Serializable]
+        public enum States
         {
-            case States.DEFAULT:
-                NextState(States.PICKUP);
-                dadDefault.SetActive(true);
-                dadPickUp.SetActive(false);
-                dadThrow.SetActive(false);
-                break;
-            case States.PICKUP:
-                NextState(States.THROW);
-                dadDefault.SetActive(false);
-                dadPickUp.SetActive(true);
-                dadThrow.SetActive(false);
-                break;
-            case States.THROW:
-                dadDefault.SetActive(false);
-                dadPickUp.SetActive(false);
-
-                if (timeToThrowC > timeToThrow)
-                {
-                    timeToThrowC += Time.deltaTime;
-                }
-                else
-                {
-                    thrownTV.SetActive(true);
-                }
-                break;
+            DEFAULT,
+            PICKUP,
+            THROW
         }
-    }
+        [SerializeField] public States states = States.DEFAULT;
+        [SerializeField] GameObject dadDefault;
+        [SerializeField] GameObject dadPickUp;
+        [SerializeField] GameObject dadThrow;
 
-    void NextState(States state)
-    {
-        if (timeToSwitchC < timeToSwitch)
+        [Header("TUNERS")]
+        [SerializeField]
+        [Range(0f, 2f)] float timeToSwitch;
+        float timeToSwitchC;
+
+        [Header("=====# TV THROW STUFF #=====")]
+        [SerializeField]
+        [Range(0, 3)] float timeToThrow;
+        float timeToThrowC;
+        [SerializeField] GameObject thrownTV;
+        // Start is called before the first frame update
+        void Start()
         {
-            timeToSwitchC += Time.deltaTime;
+
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            states = state;
-            timeToSwitchC = 0f;
+            switch (states)
+            {
+                case States.DEFAULT:
+                    NextState(States.PICKUP);
+                    dadDefault.SetActive(true);
+                    dadPickUp.SetActive(false);
+                    dadThrow.SetActive(false);
+                    break;
+                case States.PICKUP:
+                    NextState(States.THROW);
+                    dadDefault.SetActive(false);
+                    dadPickUp.SetActive(true);
+                    dadThrow.SetActive(false);
+                    break;
+                case States.THROW:
+                    dadDefault.SetActive(false);
+                    dadPickUp.SetActive(false);
+
+                    if (timeToThrowC > timeToThrow)
+                    {
+                        timeToThrowC += Time.deltaTime;
+                    }
+                    else
+                    {
+                        thrownTV.SetActive(true);
+                    }
+                    break;
+            }
+        }
+
+        void NextState(States state)
+        {
+            if (timeToSwitchC < timeToSwitch)
+            {
+                timeToSwitchC += Time.deltaTime;
+            }
+            else
+            {
+                states = state;
+                timeToSwitchC = 0f;
+            }
         }
     }
 }

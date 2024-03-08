@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: thermostat
       value: 
       objectReference: {fileID: 1490777703}
+    - target: {fileID: 5021084130405322044, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6532780207246199594, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.21
