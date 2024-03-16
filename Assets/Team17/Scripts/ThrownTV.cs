@@ -9,6 +9,7 @@ namespace Team17
     {
         [SerializeField] GameObject startpoint;
         [SerializeField] GameObject endpoint;
+        [SerializeField] GameObject thermostatSlider;
 
         [Header("Animation Settings: ")]
         [SerializeField] float animationTime;
@@ -42,11 +43,13 @@ namespace Team17
                 transform.position += new Vector3(0, verticalAnimation.Evaluate(animationTimeC) * verticalAnimationScaler, 0);
                 transform.Rotate(0, 0, rotationSpeed);
                 transform.localScale = Vector2.one * Mathf.Lerp(sizeRange.x, sizeRange.y, animationTimeC / animationTime);
+                thermostatSlider.SetActive(false);
             }
             else
             {
                 GetComponent<Animator>().enabled = false;
             }
+
         }
     }
 }

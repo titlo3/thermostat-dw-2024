@@ -1223,6 +1223,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104841808167090426, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390253045066155642, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: thermostatSlider
+      value: 
+      objectReference: {fileID: 283817712}
     - target: {fileID: 6532780207246199594, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.21
@@ -1262,6 +1270,14 @@ PrefabInstance:
     - target: {fileID: 6532780207246199594, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713033370492202955, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713033370492202955, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.31
       objectReference: {fileID: 0}
     - target: {fileID: 8272951336670827591, guid: abfc838efae783b439781b6cbe6a35a4, type: 3}
       propertyPath: m_Name
